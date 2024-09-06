@@ -12,3 +12,12 @@ function getComputerChoice() {
 
     return computerChoice
 }
+
+function getHumanChoice() {
+    let humanChoice = prompt("Choose between Rock, Paper or Scissors: ")
+    humanChoice.toLowerCase()
+    
+    return humanChoice
+}
+
+console.log(getHumanChoice())
