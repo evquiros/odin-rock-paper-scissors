@@ -14,9 +14,11 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt("Choose between Rock, Paper or Scissors: ")
-    humanChoice.toLowerCase()
+    let humanChoice = ""
     
+    humanChoice = prompt("Choose between Rock, Paper or Scissors: ")
+    humanChoice.toLowerCase()
+
     return humanChoice
 }
 
