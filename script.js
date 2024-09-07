@@ -22,4 +22,44 @@ function getHumanChoice() {
     return humanChoice
 }
 
-console.log(getHumanChoice())
+function playGame(){
+    let humanScore = 0
+    let computerScore = 0
+    
+    function playRound(humanChoice, computerChoice) {
+    
+        if(humanChoice == computerChoice){
+            console.log(`It's a tie! ${humanChoice} can't beat ${computerChoice}`)
+        } else if (humanChoice == "rock" && computerChoice == "scissors" || humanChoice == "scissors" && computerChoice == "paper" || humanChoice == "paper" && computerChoice == "rock") {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}`)
+            humanScore++ 
+        } else {
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`)
+            computerScore++
+        }
+    }
+
+    function verifyWinner(humanScore, computerScore){
+        if (humanScore == computerScore) {
+            console.log(`It's a Tie!`)
+        } else if(humanScore > computerScore){
+            console.log("You Won!")
+        } else {
+            console.log("You Lost!")
+        }
+    }
+    
+    for (let i = 1; i <= 5; i++) {
+        console.log(`Round number: ${i}`)
+
+        let humanChoice = getHumanChoice()
+        let computerChoice = getComputerChoice()
+
+        playRound(humanChoice, computerChoice)
+        console.log(`Your score: ${humanScore}\nComputer's score: ${computerScore}`)
+    }
+
+    verifyWinner(humanScore, computerScore)
+}
+
+playGame()
